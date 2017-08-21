@@ -1,0 +1,10 @@
+em.error {
+    float: right;
+    color: red;
+    font-size: 2rem;
+    visibility: hidden;
+  }
+  
+  em.show {
+    visibility: visible;
+  }

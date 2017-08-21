@@ -1,0 +1,17 @@
+.app{
+    display: flex;
+    width:100%;
+    height: 100%;
+}
+
+.nav-thin {
+    position:relative;
+    width:6.5rem;
+    height:100%;
+}
+
+.content {    
+    position:relative;
+    width: calc(100% - 6.5rem);
+    height:100%;
+}

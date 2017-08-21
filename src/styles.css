@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*
+    primary: #48a999
+    dark :#004c40
+    light:#48a999
+
+    secondary : #fb8c00
+    light:#ffbd45
+    dark:#c25e00
+
+*/
+
+html{
+    margin : 0;
+    padding: 0;
+    height:100%;
+}
+
+body{
+    margin:0;
+    padding:0;
+    height:100%;
+}
+
+hr {
+    margin-top:10px;
+}
+
+.wrapper{
+    position: relative;
+    padding:0rem 2rem;
+    width:100%;
+}
+
+.component-header{
+    background-color: #ffffff; 
+    width:calc(100% - 10.5rem);
+    position: fixed;
+    top:0;    
+    z-index: 999;
+}
+
+.inline-button-right{
+    display: block;
+    float: right;
+    text-align :center;
+    line-height: 1em;
+
+    border:1px solid #fb8c00;
+    border-radius:10px;
+}
+
+.inline-button-right.active{
+   background-color: #fb8c00;
+}
+
+.inline-button-right> .glyphicon{
+    font-size:.80em;    
+}
+

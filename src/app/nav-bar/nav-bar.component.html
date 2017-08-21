@@ -1,0 +1,19 @@
+<div class="nav-wrapper">
+  <ul>
+    <li *ngIf="!isAuthenticated()">
+      <a [routerLink]="['/user/login']" routerLinkActive="active" >
+        <i class="glyphicon glyphicon-user" ></i>
+      </a>
+    </li>
+    <li *ngIf="isAuthenticated()">
+        <a [routerLink]="['/user/profile']" routerLinkActive="active" >
+          <i class="glyphicon glyphicon-user" ></i>
+        </a>
+      </li>
+    <li *ngIf="isAuthenticated()">
+      <a [routerLink]="['/groups']" routerLinkActive="active" >
+        <i class="glyphicon glyphicon-th-list"></i>
+      </a>
+    </li>    
+  </ul>
+</div>

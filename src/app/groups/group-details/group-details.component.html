@@ -1,0 +1,41 @@
+<div class="wrapper">
+  <div class="component-header">
+    <h1>
+      {{group?.name}}
+
+    </h1>
+    <hr>
+    <div class='btn-row'>
+      <div class="btn-row-item" [class.active]=" activePage === 'members'" (click)="setActivePage('members')">leden</div>
+      <div class="btn-row-item" [class.active]=" activePage === 'attendance'" (click)="setActivePage('attendance')">aanwezigen</div>
+    </div>
+    <br>
+
+  </div>
+  <div class="content">
+    <div *ngIf="activePage === 'members'">
+      <div class="details-badge" *ngFor="let member of group.members">
+        <span> {{member.firstName}}</span>
+        <span> {{member.lastName}}</span>
+        <span class="badge-right"> {{member.birthdate | date:'dd/MM/yyyy' }}</span>
+      </div>
+    </div>
+    <div *ngIf="activePage === 'attendance'">
+      <a class="details-badge" *ngFor="let sheet of attendanceSheets" [routerLink]="['/groups/editsheet', sheet.id ]" >
+        <span> {{sheet.date | date:'dd/MM/yyyy'}}</span>
+        <span class="badge-right">
+          {{sheet.attendees.length}}
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<main-button [position]="'left'" (action)="handleBackAction()">
+  <i class="glyphicon glyphicon-arrow-left"></i>
+</main-button>
+
+
+<main-button [position]="'right'" (action)="handleMainAction()">
+  <i class="glyphicon glyphicon-edit"></i>
+</main-button>

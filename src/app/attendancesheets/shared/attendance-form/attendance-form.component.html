@@ -1,0 +1,45 @@
+<form [formGroup]="form">
+  <div class="component-header">
+    <ng-content select="[title]"></ng-content>
+    <hr>
+
+    <div class="form-input" [class.error]="date.invalid && date.dirty">
+      <label class="form-label" for="dormDate"> Datum:</label>
+      <em class="error" *ngIf="date.invalid && date.dirty">Verplicht</em>
+      <input type="date" id="formDate" formControlName="formDate" useValueAsDate>
+    </div>
+
+    <div class="form-label">
+      Trainers:
+    </div>
+    <div class="flex-container">
+      <div class="selection-overview">
+        <div class="selection-tag" *ngFor="let trainer of chosenTrainers">
+          <span class="tag-text">{{trainer.firstName}} {{trainer.lastName}}</span>
+          <div class="remove-item">
+            <i class="glyphicon glyphicon-remove" (click)="removeTrainer(trainer)"></i>
+          </div>
+        </div>
+      </div>
+      <div class="add-item" (click)="toggleSelecting()">
+        <i class="glyphicon glyphicon-plus"></i>
+      </div>
+    </div>
+    <div class="options" *ngIf="selecting">
+      <div class="selection-tag" *ngFor="let trainer of trainers" (click)="addTrainer(trainer)">
+        {{trainer.firstName}} {{trainer.lastName}}
+      </div>
+    </div>
+  </div>
+
+  <div class="content" [class.selecting-trainer]="selecting">
+    <div class="member-badge" *ngFor="let member of members" (click)="toggleCheck(member)">
+      <div class="check-box">
+        <i class="glyphicon glyphicon-ok" *ngIf="isChecked(member?.id)">  </i>
+      </div>
+      <div class="badge-content">
+        {{member.firstName}}
+      </div>
+    </div>
+  </div>
+</form>

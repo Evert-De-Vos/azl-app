@@ -1,0 +1,1 @@
+export * from './attendance-form/attendance-form.component';
