@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { IMember } from 'app/common/models';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 
-import { Subject, Observable } from 'rxjs/RX';
+import { Subject, Observable } from 'rxjs';
 import { AuthService } from 'app/common/services';
 
 @Injectable()

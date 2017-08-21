@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { Observable, Subject } from 'rxjs/RX';
+import { Observable, Subject } from 'rxjs';
 import { IUser } from 'app/common/models';
 
 @Injectable()
