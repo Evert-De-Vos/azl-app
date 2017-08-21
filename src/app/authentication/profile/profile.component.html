@@ -10,14 +10,14 @@
         <em class="error" [class.show]="passwordForm.controls.oldPass?.invalid  && passwordForm.controls.oldPass?.touched">
             Verplicht
         </em>
-        <input (ngModel)="oldPass" name="oldPass" id="oldPass" type="text" class="form-control" required/>
+        <input (ngModel)="oldPass" name="oldPass" id="oldPass" type="password" class="form-control" required/>
       </div>
       <div class="form-group">
         <label for="newPass">Nieuw :</label>
         <em class="error" [class.show]="passwordForm.controls.newPass?.invalid && passwordForm.controls.newPass?.touched">
             Verplicht
         </em>
-        <input (ngModel)="newPass" name="newPass" id="newPass" type="text" class="form-control" required/>
+        <input (ngModel)="newPass" name="newPass" id="newPass" type="password" class="form-control" required/>
       </div>
       <div class="form-group">
         <label for="repeatPass">Herhaal :</label>
@@ -27,7 +27,7 @@
         <em class="error" [class.show]="(userForm.controls.repeatPassword?.invalid && userForm.controls.repeatPassword?.touched) || !matchingNewPasswords ">
             Fout wachtwoord
           </em>
-        <input (ngModel)="repeatPass" name="repeatPass" id="repeatPass" type="text" class="form-control" required/>
+        <input (ngModel)="repeatPass" name="repeatPass" id="repeatPass" type="password" class="form-control" required/>
       </div>
       <span>{{newPassMessage}}</span>
       <button type="submit">Aanpassen</button>
@@ -55,7 +55,7 @@
         <em class="error" [class.show]="userForm.controls.password?.invalid && userForm.controls.password?.touched">
             Verplicht
         </em>
-        <input (ngModel)="password" name="password" id="password" type="text" class="form-control" required/>
+        <input (ngModel)="password" name="password" id="password" type="password" class="form-control" required/>
       </div>
       <div class="form-group">
         <label for="repeatPassword">Herhaal wachtwoord: </label>
@@ -65,7 +65,7 @@
         <em class="error" [class.show]="(userForm.controls.repeatPassword?.invalid && userForm.controls.repeatPassword?.touched) || !matchingUserPasswords ">
           Fout wachtwoord
         </em>
-        <input (ngModel)="repeatPassword" name="repeatPassword" id="repeatPassword" type="text" class="form-control" required/>
+        <input (ngModel)="repeatPassword" name="repeatPassword" id="repeatPassword" type="password" class="form-control" required/>
       </div>
       <span>{{userMessage}}</span>
       <button type="submit">Toevoegen</button>
